@@ -1,0 +1,10 @@
+project_id              = ""
+service_src_bucket      = ""
+strapi_app_keys         = ""
+strapi_api_token_salt   = ""
+strapi_admin_jwt_secret = ""
+strapi_jwt_secret       = ""
+strapi_media_bucket     = ""
+front_bucket            = ""
+repository_owner        = "" // https://github.com/<repository_owner>/<repository_name>
+repository_name         = "" // https://github.com/<repository_owner>/<repository_name>

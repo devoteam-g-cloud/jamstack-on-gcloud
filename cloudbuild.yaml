@@ -1,0 +1,20 @@
+steps:
+  - id: yarn-install
+    name: node
+    entrypoint: yarn
+    args: ["install"]
+    dir: front
+
+  - id: yarn-build
+    name: node
+    entrypoint: yarn
+    args: ["build"]
+    env:
+      - "API_URL=$_API_URL"
+    dir: front
+
+  - id: deploy-to-cloud-storage
+    name: gcr.io/cloud-builders/gsutil
+    args:
+      ["-m", "rsync", "-r", "-c", "-d", "./_site", "gs://$_FRONT_BUCKET_NAME"]
+    dir: front
